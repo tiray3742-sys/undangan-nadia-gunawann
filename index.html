@@ -32,7 +32,7 @@ input,textarea{width:90%;padding:10px;margin:8px;border-radius:8px;border:1px so
   <source src="https://dl.sndup.net/c8nk/Bermuara%20Instrumental.mp3" type="audio/mpeg">
 </audio>
 
-<section class="hero">
+<section class="hero"><p id="guest" style="font-size:18px;margin-top:15px;"></p>
 <h1>The Wedding Of</h1>
 <div class="names">Nadia & Gunawan</div>
 <p>Sabtu, 28 Maret 2026</p>
@@ -94,6 +94,15 @@ document.getElementById("countdown").innerHTML=
 `<div>${days} Hari</div><div>${hours} Jam</div><div>${minutes} Menit</div><div>${seconds} Detik</div>`;
 },1000);
 </script>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+const guest = urlParams.get('to');
+
+if(guest){
+  document.getElementById('guest').innerText = "Kepada Yth. " + guest.replaceAll('+',' ');
+}
+</script>
 
 </body>
 </html>
+
